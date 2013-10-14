@@ -1,4 +1,5 @@
-# MacroProcessor
+salvation-macroprocessor
+========================
 
-'Tis a little Perl framework which main purpose is to exclude unnecessary doubling
+Macros-like code processing and generator engine
 
