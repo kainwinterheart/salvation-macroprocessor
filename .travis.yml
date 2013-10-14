@@ -1,0 +1,11 @@
+language: perl
+perl:
+ - "5.10"
+ - "5.12"
+ - "5.14"
+ - "5.16"
+
+install:
+ - mv META.yml META.yml.1 && mv META.json META.json.1 && cpanm -v --installdeps --notest . && mv META.yml.1 META.yml && mv META.json.1 META.json
+
+
