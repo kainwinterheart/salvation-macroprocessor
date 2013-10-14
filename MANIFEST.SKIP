@@ -1,0 +1,12 @@
+^Build$
+^Makefile$
+^_build/
+^blib/
+^.travis.yml$
+^.git/
+^MYMETA.yml$
+^MYMETA.json$
+^META.json$
+^README.md$
+^generate-build_pl.sh$
+^Build.PL.template$
