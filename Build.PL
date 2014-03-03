@@ -12,6 +12,7 @@ Module::Build
 		dist_abstract 		=> 'MacroProcessor itself',
 		dist_author 		=> [ 'Gennadiy Filatov <kain.winterheart@gmail.com>' ],
 		recursive_test_files 	=> 1,
+		license 		=> 'perl',
 		configure_requires	=> {
 			'Module::Build' => 0.36
 		},
@@ -42,6 +43,12 @@ Module::Build
 'Variable::Magic' => '0.48',
 'MooseX::StrictConstructor' => '0.19',
 
+		},
+		meta_merge              => {
+			resources       => {
+				repository => 'https://github.com/kainwinterheart/salvation-macroprocessor.git',
+				bugtracker => 'https://github.com/kainwinterheart/salvation-macroprocessor/issues'
+			}
 		}
 	)
 	-> create_build_script()

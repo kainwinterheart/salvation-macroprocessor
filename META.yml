@@ -6,8 +6,8 @@ build_requires: {}
 configure_requires:
   Module::Build: 0.36
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4004, CPAN::Meta::Converter version 2.130880'
-license: unknown
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.112150'
+license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -15,27 +15,37 @@ name: Salvation-MacroProcessor
 provides:
   Salvation::MacroProcessor:
     file: lib/Salvation/MacroProcessor.pm
-    version: 1
+    version: 0.9
   Salvation::MacroProcessor::Connector:
     file: lib/Salvation/MacroProcessor/Connector.pm
+    version: 0
   Salvation::MacroProcessor::Field:
     file: lib/Salvation/MacroProcessor/Field.pm
+    version: 0
   Salvation::MacroProcessor::ForRoles:
     file: lib/Salvation/MacroProcessor/ForRoles.pm
+    version: 0
   Salvation::MacroProcessor::Hooks:
     file: lib/Salvation/MacroProcessor/Hooks.pm
+    version: 0
   Salvation::MacroProcessor::Iterator:
     file: lib/Salvation/MacroProcessor/Iterator.pm
+    version: 0
   Salvation::MacroProcessor::Iterator::Compliance:
     file: lib/Salvation/MacroProcessor/Iterator/Compliance.pm
+    version: 0
   Salvation::MacroProcessor::Meta::Role:
     file: lib/Salvation/MacroProcessor/Meta/Role.pm
+    version: 0
   Salvation::MacroProcessor::MethodDescription:
     file: lib/Salvation/MacroProcessor/MethodDescription.pm
+    version: 0
   Salvation::MacroProcessor::Role:
     file: lib/Salvation/MacroProcessor/Role.pm
+    version: 0
   Salvation::MacroProcessor::Spec:
     file: lib/Salvation/MacroProcessor/Spec.pm
+    version: 0
 requires:
   B::Hooks::EndOfScope: 0.11
   Carp::Assert: 0.20
@@ -60,6 +70,10 @@ requires:
   Variable::Magic: 0.48
   namespace::autoclean: 0.13
   namespace::clean: 0.23
-  perl: v5.10.1
+  perl: 0
   version: 0.88
-version: 1
+resources:
+  bugtracker: https://github.com/kainwinterheart/salvation-macroprocessor/issues
+  license: http://dev.perl.org/licenses/
+  repository: https://github.com/kainwinterheart/salvation-macroprocessor.git
+version: 0.9
