@@ -32,3 +32,46 @@ no Moose::Role;
 
 -1;
 
+
+# ABSTRACT: A role with most common methods for L<Salvation::MacroProcessor>-enabled classes
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::Role - A role with most common methods for L<Salvation::MacroProcessor>-enabled classes
+
+=head1 REQUIRES
+
+L<Moose> 
+
+=head1 METHODS
+
+=head2 smp_spec
+
+ $object -> smp_spec( @query );
+
+This method is a shorcut for:
+
+ require Salvation::MacroProcessor::Spec;
+
+ Salvation::MacroProcessor::Spec -> parse_and_new( $object, \@query );
+
+=head2 smp_check
+
+ $object -> smp_check( @query );
+
+This method is a shortcut for:
+
+ $object -> smp_spec( @query ) -> check( $object );
+
+=head2 smp_select
+
+ $object -> smp_select();
+
+This method is a shortcut for:
+
+ $object -> smp_spec( @query ) -> select();
+
+=cut
+
