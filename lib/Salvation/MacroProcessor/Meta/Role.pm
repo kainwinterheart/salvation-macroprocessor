@@ -688,3 +688,164 @@ no Moose::Role;
 
 -1;
 
+# ABSTRACT: L<Salvation::MacroProcessor>'s role for metaclasses
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::Meta::Role - L<Salvation::MacroProcessor>'s role for metaclasses
+
+=head1 REQUIRES
+
+L<List::MoreUtils> 
+
+L<Module::Load> 
+
+L<Scalar::Util> 
+
+L<Carp::Assert> 
+
+L<Moose> 
+
+=head1 METHODS
+
+=head2 smp_add_alias
+
+ $meta -> smp_add_alias( $alias, $name );
+
+Backend for L<Salvation::MacroProcessor>C<::smp_add_alias>.
+
+=head2 smp_add_connector
+
+ $meta -> smp_add_connector( $connector );
+
+Backend for L<Salvation::MacroProcessor>C<::smp_add_connector>.
+
+C<$connector> is a L<Salvation::MacroProcessor::Connector> instance.
+
+=head2 smp_add_description
+
+ $meta -> smp_add_description( $description );
+
+Backend for L<Salvation::MacroProcessor>C<::smp_add_description>.
+
+C<$description> is a L<Salvation::MacroProcessor::MethodDescription> instance.
+
+=head2 smp_add_share
+
+ $meta -> smp_add_share( $name, $code );
+
+Backend for L<Salvation::MacroProcessor>C<::smp_add_share>.
+
+=head2 smp_import_descriptions
+
+ $meta -> smp_import_descriptions( {
+ 	class => $class,
+	prefix => $prefix,
+	list => $list,
+	connector => $connector
+ } );
+
+Backend for L<Salvation::MacroProcessor>C<::smp_import_descriptions>.
+
+=head2 smp_import_shares
+
+ $meta -> smp_import_shares( {
+ 	class => $class,
+	prefix => $prefix,
+	list => $list
+ } );
+
+Backend for L<Salvation::MacroProcessor>C<::smp_import_shares>.
+
+=head2 smp_find_connector_by_name
+
+ $meta -> smp_find_connector_by_name( $name );
+
+C<$name> is a string.
+
+Finds and returns L<Salvation::MacroProcessor::Connector> instance, or C<undef> if nothing is found.
+
+Looks firstly at current class, secondly at its roles and thirdly at class's ancestors, if any.
+
+=head2 smp_find_description_by_name
+
+ $meta -> smp_find_description_by_name( $name );
+
+C<$name> is a string.
+
+Finds and returns L<Salvation::MacroProcessor::MethodDescription> instance, or C<undef> if nothing is found.
+
+Looks firstly at aliases of current class, secondly at descriptions of current class, thirdly at roles of current class, fourthly at ancestors of current class, and fifthly at imported descriptions (ones which have been imported here) of current class, if any.
+
+=head2 smp_find_share_by_name
+
+ $meta -> smp_find_share_by_name( $name );
+
+C<$name> is a string.
+
+Finds and returns C<CodeRef>, or C<undef> if nothing is found.
+
+Looks firstly at current class, secondly at its roles, thirdly at its ancestors and fourthly at imported shares (ones which have been imported here) of current class, if any.
+
+=head2 smp_find_share_import_spec_by_name
+
+ $meta -> smp_find_share_import_spec_by_name( $name );
+
+C<$name> is a string.
+
+=head2 smp_get_all_aliases
+
+ $meta -> smp_get_all_aliases();
+
+=head2 smp_get_all_aliases_names
+
+ $meta -> smp_get_all_aliases_names();
+
+=head2 smp_get_all_descriptions
+
+ $meta -> smp_get_all_descriptions();
+
+=head2 smp_get_all_descriptions_names
+
+ $meta -> smp_get_all_descriptions_names();
+
+=head2 smp_get_all_imported_descriptions
+
+ $meta -> smp_get_all_imported_descriptions();
+
+=head2 smp_get_all_imported_descriptions_names
+
+ $meta -> smp_get_all_imported_descriptions_names();
+
+=head2 smp_get_all_imported_shares
+
+ $meta -> smp_get_all_imported_shares();
+
+=head2 smp_get_all_imported_shares_names
+
+ $meta -> smp_get_all_imported_shares_names();
+
+=head2 smp_get_all_shares
+
+ $meta -> smp_get_all_shares();
+
+=head2 smp_get_all_shares_names
+
+ $meta -> smp_get_all_shares_names();
+
+=head2 smp_uniq_aliases
+
+ $meta -> smp_uniq_aliases();
+
+=head2 smp_uniq_descriptions
+
+ $meta -> smp_uniq_descriptions();
+
+=head2 smp_uniq_shares
+
+ $meta -> smp_uniq_shares();
+
+=cut
+
