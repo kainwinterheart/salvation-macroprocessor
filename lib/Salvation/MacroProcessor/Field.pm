@@ -19,3 +19,47 @@ no Moose;
 
 -1;
 
+
+# ABSTRACT: Query field object
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::Field - Query field object
+
+=head1 REQUIRES
+
+L<Moose> 
+
+=head1 METHODS
+
+=head2 description
+
+ $field -> description()
+
+Returns an appropriate L<Salvation::MacroProcessor::MethodDescription> instance for this field.
+
+=head2 value
+
+ $field -> value()
+
+Returns a value supplied by you, or any other developer, as a condition for the filter.
+
+=head2 postfilter
+
+ $field -> postfilter( $object );
+
+C<$object> is an object representing a single row of data returned by the query.
+
+Shortcut for L<Salvation::MacroProcessor::MethodDescription>C<::postfilter>.
+
+=head2 query
+
+ $field -> query();
+ $field -> query( $shares );
+
+Shortcut for L<Salvation::MacroProcessor::MethodDescription>C<::query>.
+
+=cut
+
