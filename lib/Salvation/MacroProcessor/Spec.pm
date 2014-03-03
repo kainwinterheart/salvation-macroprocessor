@@ -286,3 +286,63 @@ no Moose;
 
 -1;
 
+
+# ABSTRACT: Query object
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::Spec - Query object
+
+=head1 REQUIRES
+
+L<Scalar::Util> 
+
+L<Carp::Assert> 
+
+L<Moose> 
+
+=head1 METHODS
+
+=head2 parse_and_new
+
+ Salvation::MacroProcessor::Spec -> parse_and_new( $class_or_object, $query );
+
+Creates and returns new query object, an instance of B<Salvation::MacroProcessor::Spec> class.
+
+C<$class_or_object> is a class name or instance of the class which will be the base class for the query. It has been thought of as "I will check or select objects of that type".
+
+C<$query> is an object of type ArrayRef[ArrayRef[Any]]. It is the query you want to perform. Each inner ArrayRef represents a filter, a field which consists of two parameters: the first is the name and the second is the value. Imagine you have following C<$query> object:
+
+ [
+ 	[ method => $value ]
+ ]
+
+. C<method> here is the name of the method description which will be the part of the query, and C<$value> is the value for this column, a condition for a filter. It should be thought of as "I want to select an object which method()' call returns the $value".
+
+I.e., a query with two fields will look somewhat like this:
+
+ [
+ 	[ method1 => $value1 ],
+	[ method2 => $value2 ]
+ ]
+
+. Note this very explicit separation of fields.
+
+=head2 select
+
+ $spec -> select();
+
+Selects objects.
+
+=head2 check
+
+ $spec -> check( $object );
+
+Checks if given C<$object> could be selected using this C<$spec>.
+
+C<$object> is an object representing a single row of data returned by the query.
+
+=cut
+
