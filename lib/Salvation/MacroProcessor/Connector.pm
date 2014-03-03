@@ -73,3 +73,68 @@ no Moose;
 
 -1;
 
+
+# ABSTRACT: An object representing interconnection between two classes
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::Connector - An object representing interconnection between two classes
+
+=head1 REQUIRES
+
+L<Scalar::Util> 
+
+L<Carp::Assert> 
+
+L<MooseX::StrictConstructor> 
+
+L<Moose> 
+
+=head1 METHODS
+
+=head2 name
+
+ $object -> name();
+
+Returns string which is the name of this connector.
+
+=head2 code
+
+ $object -> code();
+
+Returns CodeRef which is the actual connecting code.
+
+=head2 associated_meta
+
+ $object -> associated_meta();
+
+Returns L<Moose::Meta::Class> or L<Moose::Meta::Role> object instance corresponding to the object which has defined the connector.
+
+=head2 previously_associated_meta
+
+ $object -> previously_associated_meta();
+
+Returns L<Moose::Meta::Class> or L<Moose::Meta::Role> object instance corresponding to the object which has defined the connector. It is used when child class inherits a connector from its parent and holds the reference to parent's class metaclass.
+
+=head2 inherited_connector
+
+ $description -> inherited_connector();
+
+Returns L<Salvation::MacroProcessor::Connector> object instance as it has been defined by a parent class if the connector has been inherited.
+
+=head2 clone
+
+ $object -> clone();
+
+Clones connector, returning new-made clone.
+
+=head2 required_shares
+
+ $object -> required_shares();
+
+Returns an ArrayRef. Each element is the name of required share.
+
+=cut
+
