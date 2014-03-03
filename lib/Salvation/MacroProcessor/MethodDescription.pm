@@ -213,3 +213,121 @@ no Moose;
 
 -1;
 
+
+# ABSTRACT: Method description object
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::MethodDescription - Method description object
+
+=head1 DESCRIPTION
+
+=head1 REQUIRES
+
+L<Scalar::Util> 
+
+L<Carp::Assert> 
+
+L<MooseX::StrictConstructor> 
+
+L<Moose> 
+
+=head1 METHODS
+
+=head2 method
+
+ $description -> method();
+
+Returns a name of the description. Usually matches a name of the method being described, though can be different in some cases.
+
+=head2 orig_method
+
+ $description -> orig_method();
+
+Returns an original name of the description. In example, if the description of method named C<id> has been imported into another class with prefix C<parent_>, then such description will have C<method> equal to C<parent_id> and C<orig_method> equal to C<id>.
+
+=head2 associated_meta
+
+ $description -> associated_meta();
+
+Returns L<Moose::Meta::Class> or L<Moose::Meta::Role> object instance corresponding to the object which has defined the description.
+
+=head2 connector_chain
+
+ $description -> connector_chain();
+
+Return an ArrayRef. Each element is another ArrayRef containing two elements:
+
+=over
+
+=item class name
+
+String. A name of the class where the description has been imported.
+
+=item connector name
+
+String. A name of the connector which has been used to import description.
+
+=back
+
+This will hold the whole import chain for description being imported.
+
+=head2 previously_associated_meta
+
+ $description -> previously_associated_meta();
+
+Returns L<Moose::Meta::Class> or L<Moose::Meta::Role> object instance corresponding to the object which has defined the description. It is used when child class inherits a description from its parent and holds the reference to parent's class metaclass.
+
+=head2 inherited_description
+
+ $description -> inherited_description();
+
+Returns L<Salvation::MacroProcessor::MethodDescription> object instance as it has been defined by a parent class if the description has been inherited.
+
+=head2 attr
+
+ $description -> attr();
+
+Returns L<Moose::Meta::Attribute> object instance if the description is for attribute instead of plain method.
+
+=head2 clone
+
+ $description -> clone();
+
+Clones description, returning new-made clone.
+
+=head2 excludes_filters
+
+ $description -> excludes_filters();
+
+Returns an ArrayRef. Each element is the name of conflicting description.
+
+=head2 postfilter
+
+ $description -> postfilter( $object, $value );
+
+Returns boolean value. Executes custom description's post-filtering code. See C<postfilter> argument of L<Salvation::MacroProcessor>C<::smp_add_description> method.
+
+=head2 query
+
+ $description -> query( $value );
+ $description -> query( $shares, $value );
+
+Returns ArrayRef which is a processed query part for this description, customized for given C<$value> and C<$shares> as told by C<query> argument of L<Salvation::MacroProcessor>C<::smp_add_description> or L<Salvation::MacroProcessor::Hooks>C<::query_from_attribute> call, if any is applicable.
+
+=head2 required_filters
+
+ $description -> required_filters();
+
+Returns an ArrayRef. Each element is the name of required description.
+
+=head2 required_shares
+
+ $description -> required_shares();
+
+Returns an ArrayRef. Each element is the name of required share.
+
+=cut
+
