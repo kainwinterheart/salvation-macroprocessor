@@ -61,3 +61,22 @@ no Moose::Role;
 
 -1;
 
+
+# ABSTRACT: L<Salvation::MacroProcessor> to use within roles (see L<Moose::Manual::Roles> for info about roles)
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::ForRoles - L<Salvation::MacroProcessor> to use within roles (see L<Moose::Manual::Roles> for info about roles)
+
+=head1 REQUIRES
+
+L<Moose> 
+
+=head1 FUNCTIONS
+
+See L<Salvation::MacroProcessor> for more info as both are exporting the same functions.
+
+=cut
+
