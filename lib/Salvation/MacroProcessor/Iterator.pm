@@ -92,3 +92,44 @@ no Moose;
 
 -1
 
+
+# ABSTRACT: An iterator for reading query results
+
+=pod
+
+=head1 NAME
+
+Salvation::MacroProcessor::Iterator - An iterator for reading query results
+
+=head1 REQUIRES
+
+L<Moose> 
+
+=head1 METHODS
+
+=head2 first
+
+ $object -> first()
+
+Returns first element of a list.
+
+=head2 last
+
+ $object -> last()
+
+Returns last element of a list.
+
+=head2 next
+
+ $object -> next()
+
+Returns element at current position, then increases position by one.
+
+=head2 prev
+
+ $object -> prev()
+
+Returns element at current position, then decreases position by one.
+
+=cut
+
