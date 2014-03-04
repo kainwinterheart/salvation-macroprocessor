@@ -2,7 +2,7 @@ use strict;
 
 package Salvation::MacroProcessor;
 
-our $VERSION = 0.92;
+our $VERSION = 0.93;
 
 use Moose;
 use Moose::Exporter ();
@@ -96,6 +96,7 @@ no Moose;
 
 -1;
 
+__END__
 
 # ABSTRACT: Macros definition and processing engine
 
@@ -143,11 +144,14 @@ This is a base class for, say, our little ORM. It has method named C<get_many> w
  {
  	my ( $self, @query ) = @_;
 
-	return &do_real_db_select_and_make_objects( $self, \@query ); # content of this function does not mean anything for us
+	my @rows = &do_real_db_select_and_make_objects( $self, \@query ); # content of this function does not mean anything for us
+
+	return &create_iterator( \@rows ); # this somehow creates an iterator object which does L<Salvation::MacroProcessor::Iterator::Compliance> role
  }
 
 C<Class1> also has some methods matching column names:
 
+ sub id; # is primary key
  sub column1;
  sub column2;
  sub column3;
@@ -158,7 +162,7 @@ C<Class1> also has some methods matching column names:
 
 . You're doing it using your ORM, which results in, say, following call:
 
- Class1 -> get_many(
+ my $it = Class1 -> get_many(
  	_clause => [
 		cond => [
 			_clause => [
@@ -201,16 +205,31 @@ Let's define a class named C<Salvation::MacroProcessor::Hooks::Class1> and defin
  {
  	my ( $self, $spec, $additional_query ) = @_;
 
- 	return $spec -> class() -> get_many( @{ $spec -> query() }, @$additional_query ); # select many objects
+ 	my $it = $spec -> class() -> get_many( @{ $spec -> query() }, @$additional_query ); # select many objects
+
+	return Salvation::MacroProcessor::Iterator -> new(
+		postfilter => sub{ $spec -> __postfilter_each( shift ) }, # kind of common statement
+		iterator => $it
+	);
  }
 
  sub check
  {
  	my ( $self, $spec, $object ) = @_;
 
-	my @out = $self -> select( $spec, [ _id => $object -> id() ] );
+	my $it = $self -> select( $spec, [ _id => $object -> id() ] );
 
-	return ( scalar( @out ) == 1 ); # check if got exactly one object
+	my $cnt = 0;
+	my $db_object = undef;
+
+	while( defined( my $row = $it -> next() ) )
+	{
+		die if $cnt ++;
+
+		$db_object = $row;
+	}
+
+	return ( defined( $db_object ) and ( $object -> id() == $db_object -> id() ) ); # check if got the same object
  }
 
  no Moose;
@@ -232,11 +251,11 @@ Then let's add description for method of C<Class1> and apply a role aimed to sim
 
 . So now we have hook - implementation of our specific logic of querying database, and also we have one description for a method. So we can do this:
 
- my @objects = Class1 -> smp_select(
+ my $it = Class1 -> smp_select(
  	[ check_if_this_is_the_object => true ] # to select some objects matching criteria
  );
 
- my @objects = Class1 -> smp_select(
+ my $it = Class1 -> smp_select(
  	[ check_if_this_is_the_object => false ]
  );
 

@@ -73,6 +73,7 @@ no Moose;
 
 -1;
 
+__END__
 
 # ABSTRACT: An object representing interconnection between two classes
 
@@ -93,6 +94,24 @@ L<MooseX::StrictConstructor>
 L<Moose> 
 
 =head1 METHODS
+
+=head2 new
+
+ Salvation::MacroProcessor::Connector -> new(
+ 	name => $name,
+	code => $code,
+	associated_meta => $associated_meta,
+	previously_associated_meta => $previously_associated_meta,
+	required_shares => $required_shares
+ )
+
+C<name>, C<code> and C<associated_meta> are required arguments.
+
+Constructor.
+
+Returns L<Salvation::MacroProcessor::Connector> instance.
+
+All arguments documented at this section below, or at C<smp_add_connector> function documentation of L<Salvation::MacroProcessor> module.
 
 =head2 name
 

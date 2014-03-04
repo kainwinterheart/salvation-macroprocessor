@@ -14,6 +14,7 @@ no Moose;
 
 -1;
 
+__END__
 
 # ABSTRACT: Base class for your hooks with implementation of actual logic for L<Salvation::MacroProcessor::Spec>
 
@@ -22,6 +23,30 @@ no Moose;
 =head1 NAME
 
 Salvation::MacroProcessor::Hooks - Base class for your hooks with implementation of actual logic for L<Salvation::MacroProcessor::Spec>
+
+=head1 DESCRIPTION
+
+L<Salvation::MacroProcessor::Hooks>-derived classes are a place for your implementation of actual query execution logic. As L<Salvation::MacroProcessor::Spec> aggregates query parts in a complete query for you, you should then do something with aggregated query by yourself.
+
+For the system to work properly, your hook class should have specific name made using following pattern:
+
+ sprintf( 'Salvation::MacroProcessor::Hooks::%s', $your_class_name )
+
+, where C<$your_class_name> is the name of a class you want to have L<Salvation::MacroProcessor> support.
+
+Your hook will be loaded automatically when it need to be loaded.
+
+If there is B<no> hook for current class, but there B<is> hook for one of parent classes - this hook will be used, so you can define one parent class with L<Salvation::MacroProcessor> support and just inherit this class by other classes so each child won't need to have its own hook.
+
+=head2 Example usage
+
+ package Salvation::MacroProcessor::Hooks::MyClass;
+
+ use Moose;
+
+ extends 'Salvation::MacroProcessor::Hooks';
+
+ no Moose;
 
 =head1 REQUIRES
 

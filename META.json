@@ -4,7 +4,7 @@
       "Gennadiy Filatov <kain.winterheart@gmail.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.112150",
+   "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.133380",
    "license" : [
       "perl_5"
    ],
@@ -44,7 +44,7 @@
             "Variable::Magic" : "0.48",
             "namespace::autoclean" : "0.13",
             "namespace::clean" : "0.23",
-            "perl" : 0,
+            "perl" : "v5.10.1",
             "version" : "0.88"
          }
       }
@@ -52,47 +52,37 @@
    "provides" : {
       "Salvation::MacroProcessor" : {
          "file" : "lib/Salvation/MacroProcessor.pm",
-         "version" : "0.92"
+         "version" : "0.93"
       },
       "Salvation::MacroProcessor::Connector" : {
-         "file" : "lib/Salvation/MacroProcessor/Connector.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Connector.pm"
       },
       "Salvation::MacroProcessor::Field" : {
-         "file" : "lib/Salvation/MacroProcessor/Field.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Field.pm"
       },
       "Salvation::MacroProcessor::ForRoles" : {
-         "file" : "lib/Salvation/MacroProcessor/ForRoles.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/ForRoles.pm"
       },
       "Salvation::MacroProcessor::Hooks" : {
-         "file" : "lib/Salvation/MacroProcessor/Hooks.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Hooks.pm"
       },
       "Salvation::MacroProcessor::Iterator" : {
-         "file" : "lib/Salvation/MacroProcessor/Iterator.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Iterator.pm"
       },
       "Salvation::MacroProcessor::Iterator::Compliance" : {
-         "file" : "lib/Salvation/MacroProcessor/Iterator/Compliance.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Iterator/Compliance.pm"
       },
       "Salvation::MacroProcessor::Meta::Role" : {
-         "file" : "lib/Salvation/MacroProcessor/Meta/Role.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Meta/Role.pm"
       },
       "Salvation::MacroProcessor::MethodDescription" : {
-         "file" : "lib/Salvation/MacroProcessor/MethodDescription.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/MethodDescription.pm"
       },
       "Salvation::MacroProcessor::Role" : {
-         "file" : "lib/Salvation/MacroProcessor/Role.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Role.pm"
       },
       "Salvation::MacroProcessor::Spec" : {
-         "file" : "lib/Salvation/MacroProcessor/Spec.pm",
-         "version" : 0
+         "file" : "lib/Salvation/MacroProcessor/Spec.pm"
       }
    },
    "release_status" : "stable",
@@ -107,5 +97,5 @@
          "url" : "https://github.com/kainwinterheart/salvation-macroprocessor.git"
       }
    },
-   "version" : "0.92"
+   "version" : "0.93"
 }

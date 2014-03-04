@@ -286,6 +286,7 @@ no Moose;
 
 -1;
 
+__END__
 
 # ABSTRACT: Query object
 
@@ -343,6 +344,61 @@ Selects objects.
 Checks if given C<$object> could be selected using this C<$spec>.
 
 C<$object> is an object representing a single row of data returned by the query.
+
+=head2 new
+
+ Salvation::MacroProcessor::Spec -> new(
+ 	class => $class,
+	fields => $fields
+ )
+
+Constructor.
+
+Returns B<Salvation::MacroProcessor::Spec> instance.
+
+All arguments are required.
+
+Arguments:
+
+=over
+
+=item class
+
+String (could be coerced from Object though), the name of base class for this query.
+
+=item fields
+
+ArrayRef[Salvation::MacroProcessor::Field], list of fields used in this query.
+
+=back
+
+=head2 add_field
+
+ $spec -> add_field( $field )
+
+Add field to the list.
+
+C<$field> is a L<Salvation::MacroProcessor::Field> instance.
+
+=head2 all_fields
+
+ $spec -> all_fields()
+
+Returns an array of all fields (each is a L<Salvation::MacroProcessor::Field> instance) used in the query.
+
+=head2 fields
+
+ $spec -> fields()
+
+Returns an ArrayRef of all fields (each is a L<Salvation::MacroProcessor::Field> instance) used in the query.
+
+=head2 query
+
+ $spec -> query()
+
+Processes fields, aggregates query parts and returns an ArrayRef which contains the final query.
+
+All aggregations and processing here are done only once per object instance, so the second call to C<query> of the same object instance will be much faster than first.
 
 =cut
 

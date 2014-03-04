@@ -19,6 +19,7 @@ no Moose;
 
 -1;
 
+__END__
 
 # ABSTRACT: Query field object
 
@@ -33,6 +34,19 @@ Salvation::MacroProcessor::Field - Query field object
 L<Moose> 
 
 =head1 METHODS
+
+=head2 new
+
+ Salvation::MacroProcessor::Field -> new(
+ 	description => $description,
+	value => $value
+ )
+
+Constructor.
+
+Returns B<Salvation::MacroProcessor::Field> instance.
+
+All arguments documented at this section below.
 
 =head2 description
 

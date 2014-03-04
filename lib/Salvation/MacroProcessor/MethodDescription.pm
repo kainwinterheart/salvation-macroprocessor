@@ -213,6 +213,7 @@ no Moose;
 
 -1;
 
+__END__
 
 # ABSTRACT: Method description object
 
@@ -235,6 +236,30 @@ L<MooseX::StrictConstructor>
 L<Moose> 
 
 =head1 METHODS
+
+=head2 new
+
+ Salvation::MacroProcessor::MethodDescription -> new(
+ 	method => $method,
+ 	orig_method => $orig_method,
+	associated_meta => $associated_meta,
+	previously_associated_meta => $previously_associated_meta,
+	query => $query,
+	postfilter => $postfilter,
+	required_shares => $required_shares,
+	required_filters => $required_filters,
+	excludes_filters => $excludes_filters,
+	imported => $imported,
+	connector_chain => $connector_chain
+ )
+
+Constructor.
+
+Returns B<Salvation::MacroProcessor::MethodDescription> instance.
+
+Only C<method> and C<associated_meta> arguments are required.
+
+Mostly all arguments documented at this section below, or at C<smp_add_description> function documentation of L<Salvation::MacroProcessor> module, except C<imported> argument which is simply a boolean value where C<true> means "this description is imported from some other class" and C<false> means "this description is not imported from anywhere".
 
 =head2 method
 

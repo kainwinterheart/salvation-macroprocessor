@@ -10,6 +10,7 @@ no Moose::Role;
 
 -1;
 
+__END__
 
 # ABSTRACT: L<Salvation::MacroProcessor::Iterator>-compatible iterator interface
 

@@ -61,6 +61,7 @@ no Moose::Role;
 
 -1;
 
+__END__
 
 # ABSTRACT: L<Salvation::MacroProcessor> to use within roles (see L<Moose::Manual::Roles> for info about roles)
 
@@ -69,6 +70,18 @@ no Moose::Role;
 =head1 NAME
 
 Salvation::MacroProcessor::ForRoles - L<Salvation::MacroProcessor> to use within roles (see L<Moose::Manual::Roles> for info about roles)
+
+=head1 DESCRIPTION
+
+=head2 Example usage
+
+ package MyRole;
+
+ use Moose::Role;
+
+ use Salvation::MacroProcessor::ForRoles;
+
+ no Moose::Role;
 
 =head1 REQUIRES
 

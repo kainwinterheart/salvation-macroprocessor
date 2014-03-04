@@ -688,6 +688,8 @@ no Moose::Role;
 
 -1;
 
+__END__
+
 # ABSTRACT: L<Salvation::MacroProcessor>'s role for metaclasses
 
 =pod

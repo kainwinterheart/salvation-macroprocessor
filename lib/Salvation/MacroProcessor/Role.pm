@@ -32,6 +32,7 @@ no Moose::Role;
 
 -1;
 
+__END__
 
 # ABSTRACT: A role with most common methods for L<Salvation::MacroProcessor>-enabled classes
 
@@ -40,6 +41,18 @@ no Moose::Role;
 =head1 NAME
 
 Salvation::MacroProcessor::Role - A role with most common methods for L<Salvation::MacroProcessor>-enabled classes
+
+=head1 DESCRIPTION
+
+=head2 Example usage
+
+ package MyClass;
+
+ use Moose;
+
+ with 'Salvation::MacroProcessor::Role';
+
+ no Moose;
 
 =head1 REQUIRES
 
