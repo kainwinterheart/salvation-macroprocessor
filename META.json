@@ -1,5 +1,5 @@
 {
-   "abstract" : "MacroProcessor itself",
+   "abstract" : "Macros definition and processing engine",
    "author" : [
       "Gennadiy Filatov <kain.winterheart@gmail.com>"
    ],
@@ -52,7 +52,7 @@
    "provides" : {
       "Salvation::MacroProcessor" : {
          "file" : "lib/Salvation/MacroProcessor.pm",
-         "version" : "0.9"
+         "version" : "0.91"
       },
       "Salvation::MacroProcessor::Connector" : {
          "file" : "lib/Salvation/MacroProcessor/Connector.pm",
@@ -107,5 +107,5 @@
          "url" : "https://github.com/kainwinterheart/salvation-macroprocessor.git"
       }
    },
-   "version" : "0.9"
+   "version" : "0.91"
 }
