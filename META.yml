@@ -15,7 +15,7 @@ name: Salvation-MacroProcessor
 provides:
   Salvation::MacroProcessor:
     file: lib/Salvation/MacroProcessor.pm
-    version: 0.91
+    version: 0.92
   Salvation::MacroProcessor::Connector:
     file: lib/Salvation/MacroProcessor/Connector.pm
     version: 0
@@ -76,4 +76,4 @@ resources:
   bugtracker: https://github.com/kainwinterheart/salvation-macroprocessor/issues
   license: http://dev.perl.org/licenses/
   repository: https://github.com/kainwinterheart/salvation-macroprocessor.git
-version: 0.91
+version: 0.92
