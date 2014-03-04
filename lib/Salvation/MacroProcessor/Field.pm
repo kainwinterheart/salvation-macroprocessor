@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::Field;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose;
 
 has 'description'	=> ( is => 'rw', isa => 'Salvation::MacroProcessor::MethodDescription', required => 1, handles => { ( map{ ( $_ )x2 } ( 'required_shares', 'required_filters', 'excludes_filters', 'connector_chain' ) ), ( name => 'method' ) } );

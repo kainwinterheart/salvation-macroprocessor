@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::ForRoles;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose::Role;
 use Moose::Exporter ();
 use Moose::Util::MetaRole ();

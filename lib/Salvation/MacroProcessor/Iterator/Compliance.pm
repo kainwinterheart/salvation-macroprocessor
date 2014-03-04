@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::Iterator::Compliance;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose::Role;
 
 requires 'first', 'last', 'seek', 'next', 'count', 'to_start', 'to_end', '__position', 'prev';

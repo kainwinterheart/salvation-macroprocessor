@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::Hooks;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose;
 
 sub query_from_attribute;

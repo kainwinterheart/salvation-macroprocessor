@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::Meta::Role;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose::Role;
 
 use Carp::Assert 'assert';

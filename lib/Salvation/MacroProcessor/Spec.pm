@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::Spec;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose;
 
 use Moose::Util::TypeConstraints;

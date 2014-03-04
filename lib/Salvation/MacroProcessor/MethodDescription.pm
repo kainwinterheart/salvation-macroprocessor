@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::MethodDescription;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose;
 use MooseX::StrictConstructor;
 

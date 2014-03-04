@@ -2,6 +2,8 @@ use strict;
 
 package Salvation::MacroProcessor::Role;
 
+our $VERSION = 0.93; ## VERSION
+
 use Moose::Role;
 
 sub smp_spec

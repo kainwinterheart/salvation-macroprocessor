@@ -2,7 +2,7 @@ use strict;
 
 package Salvation::MacroProcessor;
 
-our $VERSION = 0.93;
+our $VERSION = 0.93; ## VERSION
 
 use Moose;
 use Moose::Exporter ();
