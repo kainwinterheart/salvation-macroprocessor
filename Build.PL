@@ -9,7 +9,7 @@ use Module::Build ();
 Module::Build
 	-> new(
 		module_name 		=> 'Salvation::MacroProcessor',
-		dist_abstract 		=> 'MacroProcessor itself',
+		dist_abstract 		=> 'Macros definition and processing engine',
 		dist_author 		=> [ 'Gennadiy Filatov <kain.winterheart@gmail.com>' ],
 		recursive_test_files 	=> 1,
 		license 		=> 'perl',
